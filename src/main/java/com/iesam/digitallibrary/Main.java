@@ -12,6 +12,8 @@ public class Main {
            System.out.println("MENÚ PRINCIPAL");
            System.out.println("0. Salir");
            System.out.println("1. Registrar usuario");
+           System.out.println("2. Eliminar usuario");
+           System.out.println("Introduce una opción:");
 
         option = scanner.nextInt();
         switch (option) {
@@ -29,6 +31,13 @@ public class Main {
                 UserPresentation userPresentation = new UserPresentation();
                 userPresentation.save(user);
                 System.out.println("Usuario registrado correctamente");
+                break;
+            case 2:
+                System.out.println("Introduce el DNI del usuario a eliminar");
+                String dni = scanner.next();
+                UserPresentation userPresentation1 = new UserPresentation();
+                userPresentation1.delete(dni);
+                System.out.println("Usuario eliminado correctamente");
                 break;
         }
          } while (option != 0);
