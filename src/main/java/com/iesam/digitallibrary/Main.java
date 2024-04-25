@@ -13,6 +13,8 @@ public class Main {
            System.out.println("0. Salir");
            System.out.println("1. Registrar usuario");
            System.out.println("2. Eliminar usuario");
+           System.out.println("3. Consultar usuario");
+           System.out.println("4. Modificar usuario");
            System.out.println("Introduce una opción:");
 
         option = scanner.nextInt();
@@ -39,6 +41,23 @@ public class Main {
                 userPresentation1.delete(dni);
                 System.out.println("Usuario eliminado correctamente");
                 break;
+                case 3:
+                System.out.println("Introduce el DNI del usuario a consultar");
+                String dni1 = scanner.next();
+                UserPresentation userPresentation2 = new UserPresentation();
+                System.out.println( userPresentation2.get(dni1).toString());
+                break;
+                case 4:
+                System.out.println("Introduce el dni del usuario a modificar");
+                String dni2 = scanner.next();
+                System.out.println("Introduce el nuevo nombre del usuario");
+                String name1 = scanner.next();
+                System.out.println("Introduce el nuevo email del usuario");
+                String email1 = scanner.next();
+                User user1 = new User(name1, email1, dni2);
+                UserPresentation userPresentation3 = new UserPresentation();
+                userPresentation3.modify(user1);
+                System.out.println("Usuario modificado correctamente");
         }
          } while (option != 0);
         scanner.close();
