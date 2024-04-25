@@ -30,22 +30,19 @@ public class Main {
                 System.out.println("Introduce el DNI del usuario");
                 String DNI = scanner.next();
                 User user = new User(name, email, DNI);
-                UserPresentation userPresentation = new UserPresentation();
-                userPresentation.save(user);
+                UserPresentation.save(user);
                 System.out.println("Usuario registrado correctamente");
                 break;
             case 2:
                 System.out.println("Introduce el DNI del usuario a eliminar");
                 String dni = scanner.next();
-                UserPresentation userPresentation1 = new UserPresentation();
-                userPresentation1.delete(dni);
+                UserPresentation.delete(dni);
                 System.out.println("Usuario eliminado correctamente");
                 break;
                 case 3:
                 System.out.println("Introduce el DNI del usuario a consultar");
                 String dni1 = scanner.next();
-                UserPresentation userPresentation2 = new UserPresentation();
-                System.out.println( userPresentation2.get(dni1).toString());
+                System.out.println( UserPresentation.get(dni1).toString());
                 break;
                 case 4:
                 System.out.println("Introduce el dni del usuario a modificar");
@@ -55,8 +52,7 @@ public class Main {
                 System.out.println("Introduce el nuevo email del usuario");
                 String email1 = scanner.next();
                 User user1 = new User(name1, email1, dni2);
-                UserPresentation userPresentation3 = new UserPresentation();
-                userPresentation3.modify(user1);
+                UserPresentation.modify(user1);
                 System.out.println("Usuario modificado correctamente");
         }
          } while (option != 0);
