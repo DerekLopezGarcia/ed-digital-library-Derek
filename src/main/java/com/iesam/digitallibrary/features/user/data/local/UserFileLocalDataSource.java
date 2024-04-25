@@ -46,7 +46,7 @@ public class UserFileLocalDataSource {
     public User findById(String id) {
         List<User> models = findAll();
         for (User model : models) {
-            if (Objects.equals(model.getDNI(), id)) {
+            if (model.getDNI().equals(id)) {
                 return model;
             }
         }
