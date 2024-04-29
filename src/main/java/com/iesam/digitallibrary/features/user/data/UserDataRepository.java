@@ -28,5 +28,9 @@ public class UserDataRepository implements UserRepository{
     public void delete(String dni) {
         userFileLocalDataSource.delete(dni);
     }
+    public User get (String dni){
+        userFileLocalDataSource.findById(dni);
+        return null;
+    }
 }
 

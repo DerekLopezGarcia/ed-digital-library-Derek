@@ -1,9 +1,7 @@
 package com.iesam.digitallibrary.features.user.presentation;
 
 import com.iesam.digitallibrary.features.user.data.UserDataRepository;
-import com.iesam.digitallibrary.features.user.domain.DeleteUserByDniUseCase;
-import com.iesam.digitallibrary.features.user.domain.NewUserUseCase;
-import com.iesam.digitallibrary.features.user.domain.User;
+import com.iesam.digitallibrary.features.user.domain.*;
 
 public class UserPresentation {
     public static void save(User user){
@@ -13,5 +11,13 @@ public class UserPresentation {
     public static void delete(String dni){
         DeleteUserByDniUseCase deleteUserByDniUseCase = new DeleteUserByDniUseCase(UserDataRepository.newInstance());
         deleteUserByDniUseCase.execute(dni);
+    }
+    public static User  get (String dni){
+        GetUserByDniUseCase getUserByDniUseCase = new GetUserByDniUseCase(UserDataRepository.newInstance());
+       return getUserByDniUseCase.execute(dni);
+    }
+    public static void modify(User user){
+        ModifyUserUseCase modifyUserUseCase = new ModifyUserUseCase(UserDataRepository.newInstance());
+        modifyUserUseCase.execute(user);
     }
 }
