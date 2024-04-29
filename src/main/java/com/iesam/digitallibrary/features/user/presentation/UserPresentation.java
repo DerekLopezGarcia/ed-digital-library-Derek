@@ -20,4 +20,8 @@ public class UserPresentation {
         ModifyUserUseCase modifyUserUseCase = new ModifyUserUseCase(UserDataRepository.newInstance());
         modifyUserUseCase.execute(user);
     }
+    public static void list(){
+        ListUsersUseCase listUsersUseCase = new ListUsersUseCase(UserDataRepository.newInstance());
+        listUsersUseCase.execute();
+    }
 }

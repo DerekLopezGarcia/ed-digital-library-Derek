@@ -32,5 +32,9 @@ public class UserDataRepository implements UserRepository{
         userFileLocalDataSource.findById(dni);
         return null;
     }
+    public ArrayList<User> getAll(){
+        userFileLocalDataSource.findAll();
+        return null;
+    }
 }
 
