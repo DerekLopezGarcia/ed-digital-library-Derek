@@ -59,7 +59,7 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Listado de usuarios:");
-                    for (User user2 : UserPresentation.list()) {
+                   for (User user2 : UserPresentation.list()) {
                         System.out.println(user2.toString());
                     }
 

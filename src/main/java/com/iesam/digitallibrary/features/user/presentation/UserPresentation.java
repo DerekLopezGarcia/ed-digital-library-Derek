@@ -3,6 +3,8 @@ package com.iesam.digitallibrary.features.user.presentation;
 import com.iesam.digitallibrary.features.user.data.UserDataRepository;
 import com.iesam.digitallibrary.features.user.domain.*;
 
+import java.util.ArrayList;
+
 public class UserPresentation {
     public static void save(User user){
         NewUserUseCase newUserUseCase = new NewUserUseCase(UserDataRepository.newInstance());
@@ -20,8 +22,8 @@ public class UserPresentation {
         ModifyUserUseCase modifyUserUseCase = new ModifyUserUseCase(UserDataRepository.newInstance());
         modifyUserUseCase.execute(user);
     }
-    public static void list(){
+    public static ArrayList<User> list(){
         ListUsersUseCase listUsersUseCase = new ListUsersUseCase(UserDataRepository.newInstance());
-        listUsersUseCase.execute();
+        return (ArrayList<User>) listUsersUseCase.execute();
     }
 }
