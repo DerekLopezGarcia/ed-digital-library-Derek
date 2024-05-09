@@ -1,38 +1,34 @@
 package com.iesam.digitallibrary.features.user.domain;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-
 @ExtendWith(MockitoExtension.class)
-class NewUserUseCaseTest {
+class DeleteUserByDniUseCaseTest {
     @Mock
     UserRepository userRepository;
-    NewUserUseCase newUserUseCase;
+    DeleteUserByDniUseCase deleteUserByDniUseCase;
 
     @BeforeEach
     void setUp() {
-        newUserUseCase = new NewUserUseCase(userRepository);
+        deleteUserByDniUseCase = new DeleteUserByDniUseCase(userRepository);
+
     }
 
     @AfterEach
-    public void clear() {
-        newUserUseCase = null;
+    void clear() {
+        deleteUserByDniUseCase = null;
     }
-
     @Test
-    public void recibounusuarioyloguardo() {
-        User user = new User("name", "email", "DNI");
-        newUserUseCase.execute(user);
-        verify(userRepository, times(1)).save(user);
-
+   public void eliminarusuarioporeldni() {
+        String dni = "DNI";
+        deleteUserByDniUseCase.execute(dni);
+        Mockito.verify(userRepository, Mockito.times(1)).delete(dni);
     }
 }
