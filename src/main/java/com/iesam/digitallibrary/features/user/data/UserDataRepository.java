@@ -29,8 +29,10 @@ public class UserDataRepository implements UserRepository{
         userFileLocalDataSource.delete(dni);
     }
     public User get (String dni){
-        userFileLocalDataSource.findById(dni);
-        return null;
+       return   userFileLocalDataSource.findById(dni);
+    }
+    public ArrayList<User> getAll(){
+     return    userFileLocalDataSource.findAll();
     }
 }
 

@@ -1,5 +1,6 @@
 package com.iesam.digitallibrary;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.iesam.digitallibrary.features.user.domain.User;
@@ -16,6 +17,7 @@ public class Main {
             System.out.println("2. Eliminar usuario");
             System.out.println("3. Consultar usuario");
             System.out.println("4. Modificar usuario");
+            System.out.println("5. Listar usuarios");
             System.out.println("Introduce una opción:");
 
             option = scanner.nextInt();
@@ -55,6 +57,15 @@ public class Main {
                     User user1 = new User(name1, email1, dni2);
                     UserPresentation.modify(user1);
                     System.out.println("Usuario modificado correctamente");
+                    break;
+                case 5:
+                    System.out.println("Listado de usuarios:");
+                    List<User> users = UserPresentation.list();
+                   for (User user2 : users) {
+                        System.out.println(user2.toString());
+                    }
+
+                    break;
             }
         } while (option != 0);
         scanner.close();

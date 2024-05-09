@@ -53,7 +53,7 @@ public class UserFileLocalDataSource {
         return null;
     }
 
-    public List<User> findAll() {
+    public ArrayList<User> findAll() {
         try {
             File myObj = new File(nameFile);
             if (!myObj.exists()) {
