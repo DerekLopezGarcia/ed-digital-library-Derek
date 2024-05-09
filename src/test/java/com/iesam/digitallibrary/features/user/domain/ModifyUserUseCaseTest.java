@@ -26,7 +26,7 @@ class ModifyUserUseCaseTest {
 
     @Test
     public void modificarusuario() {
-        User user = new User("Dni", "Name", "Surname");
+        User user = new User("name", "mail", "Dni");
         modifyUserUseCase.execute(user);
         Mockito.verify(userRepository, Mockito.times(1)).delete(user.getDNI());
         Mockito.verify(userRepository, Mockito.times(1)).save(user);
