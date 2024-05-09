@@ -1,5 +1,6 @@
 package com.iesam.digitallibrary;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.iesam.digitallibrary.features.user.domain.User;
@@ -59,7 +60,8 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Listado de usuarios:");
-                   for (User user2 : UserPresentation.list()) {
+                    List<User> users = UserPresentation.list();
+                   for (User user2 : users) {
                         System.out.println(user2.toString());
                     }
 

@@ -24,6 +24,6 @@ public class UserPresentation {
     }
     public static ArrayList<User> list(){
         ListUsersUseCase listUsersUseCase = new ListUsersUseCase(UserDataRepository.newInstance());
-        return (ArrayList<User>) listUsersUseCase.execute();
+        return listUsersUseCase.execute();
     }
 }
