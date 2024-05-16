@@ -22,4 +22,23 @@ public class BookDataRepository implements BookRepsoitory {
         return (BookDataRepository) instance;
     }
 
+    @Override
+    public void save(Book book) {
+        bookFileLocalDataSource.save(book);
+    }
+
+    @Override
+    public void delete(String isbn) {
+        bookFileLocalDataSource.delete(isbn);
+    }
+
+    @Override
+    public Book get(String isbn) {
+        return bookFileLocalDataSource.findById(isbn);
+    }
+
+    @Override
+    public ArrayList<Book> getAll() {
+        return bookFileLocalDataSource.findAll();
+    }
 }
