@@ -1,9 +1,11 @@
 package com.iesam.digitallibrary.features.user.domain;
 
+import java.awt.desktop.AppReopenedEvent;
+
 public class User {
-    private String name;
-    private String email;
-    private String DNI;
+    protected String name;
+    protected String email;
+    protected String DNI;
 
     public User(String name, String email, String DNI) {
         this.name = name;
