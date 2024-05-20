@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class LoanPresentation {
     public void createLoan(Loan loan) {
+        CheckIfLoanPosibleUseCase checkIfLoanPosibleUseCase = new CheckIfLoanPosibleUseCase(LoanDataRepository.newInstance());
+        checkIfLoanPosibleUseCase.execute(loan.getBookISBN());
         CreateLoanUseCase createLoanUseCase = new CreateLoanUseCase(LoanDataRepository.newInstance());
         createLoanUseCase.execute(loan);
     }

@@ -9,7 +9,7 @@ public class GetAllLoanUseCase {
         this.loanRepository = loanRepository;
     }
 
-    public ArrayList<Loan> execute() {
+    public  ArrayList<Loan> execute() {
         return loanRepository.getAll();
     }
 }
