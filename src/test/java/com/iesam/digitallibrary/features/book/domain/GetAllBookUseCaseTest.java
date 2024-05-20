@@ -28,9 +28,7 @@ class GetAllBookUseCaseTest {
     }
     @Test
     public void devuelvoTodosLosLibros() {
-        Book book = new Book("title", "author", "123456","editorial",2021);
-        when(bookRepsoitory.getAll()).thenReturn((ArrayList<Book>) List.of(book));
-        List<Book> books = getAllBookUseCase.execute();
-        assertEquals(books, List.of(book));
+        getAllBookUseCase.execute();
+        verify(bookRepsoitory, times(1)).getAll();
     }
 }

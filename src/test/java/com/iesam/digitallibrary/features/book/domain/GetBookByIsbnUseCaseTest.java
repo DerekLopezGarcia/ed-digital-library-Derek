@@ -27,9 +27,17 @@ class GetBookByIsbnUseCaseTest {
     }
     @Test
     public void recibounisbnylodevuelvo() {
+        //given
         Book book = new Book("title", "author", "123456","editorial",2021);
         when(bookRepsoitory.get("123456")).thenReturn(book);
-        Book book1 = getBookByIsbnUseCase.execute("123456");
-        assertEquals(book, book1);
+        //when
+        Book bookReceived = getBookByIsbnUseCase.execute("123456");
+        //then
+        assertEquals(bookReceived.ISBN, "123456");
+        assertEquals(bookReceived.author, "author");
+        assertEquals(bookReceived.title, "title");
+        assertEquals(bookReceived.editorial, "editorial");
+        assertEquals(bookReceived.year, 2021);
+        assertEquals(bookReceived, book);
     }
 }
