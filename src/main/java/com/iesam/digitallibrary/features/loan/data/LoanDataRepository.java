@@ -14,10 +14,10 @@ public class LoanDataRepository implements LoanRepository {
     public LoanFileLocalDataSource loanFileLocalDataSource = new LoanFileLocalDataSource();
     public final Map<String, Loan> loanMap = new HashMap<>();
     public final ArrayList<Loan> loans = new ArrayList<>();
-    public static UserRepository instance=null;
+    public static LoanRepository instance=null;
     public static LoanDataRepository newInstance(){
         if(instance==null){
-            instance=new UserDataRepository();
+            instance=new LoanDataRepository();
         }
         return (LoanDataRepository) instance;
     }
