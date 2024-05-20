@@ -20,7 +20,7 @@ public class LoanPresentation {
         GetLoanByIdUseCase getLoanByIdUseCase = new GetLoanByIdUseCase(LoanDataRepository.newInstance());
         return getLoanByIdUseCase.execute(id);
     }
-    public ArrayList<Loan> execute() {
+    public ArrayList<Loan> list() {
         GetAllLoanUseCase getAllLoanUseCase = new GetAllLoanUseCase(LoanDataRepository.newInstance());
         return getAllLoanUseCase.execute();
     }
