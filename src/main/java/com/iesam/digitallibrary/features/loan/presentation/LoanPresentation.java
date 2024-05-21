@@ -28,4 +28,8 @@ public class LoanPresentation {
         ModifyLoanByIdUseCase modifyLoanByIdUseCase = new ModifyLoanByIdUseCase(LoanDataRepository.newInstance());
         modifyLoanByIdUseCase.execute(loan);
     }
+    public ArrayList<Loan> listUnfinished() {
+        GetUnfinishedLoansUseCase getUnfinishedLoansUseCase = new GetUnfinishedLoansUseCase(LoanDataRepository.newInstance());
+        return getUnfinishedLoansUseCase.execute();
+    }
 }
