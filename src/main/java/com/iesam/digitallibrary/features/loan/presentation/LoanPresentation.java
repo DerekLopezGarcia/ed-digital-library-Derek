@@ -122,7 +122,5 @@ public class LoanPresentation {
                     break;
             }
         } while (option != 0);
-
-        }while (option != 0);
     }
 }

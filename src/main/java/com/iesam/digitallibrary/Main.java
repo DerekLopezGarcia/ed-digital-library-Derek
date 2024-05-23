@@ -10,7 +10,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int option;
-
         do {
             menuprincipal();
             option = scanner.nextInt();
@@ -28,7 +27,7 @@ public class Main {
                     LoanPresentation.LoanMenu();
                     break;
             }
-        } while (option != 0);
+        }while (option !=0);
         scanner.close();
     }
 
